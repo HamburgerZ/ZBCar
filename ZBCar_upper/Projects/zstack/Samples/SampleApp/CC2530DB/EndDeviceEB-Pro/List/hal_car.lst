@@ -1,0 +1,320 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         01/Dec/2017  15:29:21 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Components\hal\target\CC2530EB\hal_car.c  #
+#    Command line       =  -f C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wConfig.cfg            #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Components\hal\target\CC2530EB\hal_car.c  #
+#                          -D ZIGBEEPRO -D NWK_AUTO_POLL -D ZTOOL_P1 -D       #
+#                          xMT_TASK -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D        #
+#                          LCD_SUPPORTED=DEBUG -lC C:\Users\John\Desktop\Try_ #
+#                          zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\EndDeviceEB-Pro\List\    #
+#                          -lA C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB-Pro\List\ --diag_suppress        #
+#                          Pe001,Pa010 -o C:\Users\John\Desktop\Try_zigbee\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Sa #
+#                          mpleApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\John\Desktop\Try_ #
+#                          zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\ -I                      #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\SOURCE\ -I C:\Users\John\Desktop\Try_zigbee\Z #
+#                          Stack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I      #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MT\ -I                 #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I        #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\   #
+#                          -I C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I  #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I       #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\AF\ -I           #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I         #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I           #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\ZMAC\ -I               #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I        #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\   #
+#                          -I C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \SINGLE_CHIP\ -Ohz --require_prototypes            #
+#    List file          =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\EndDeviceEB-Pro\List\hal_car.lst                 #
+#    Object file        =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\EndDeviceEB-Pro\Obj\hal_car.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3.0-1.4.0\Components\hal\target\CC2530EB\hal_car.c
+      1          /**************************************************************************************************
+      2           *                                           INCLUDES
+      3           **************************************************************************************************/
+      4          #include  "hal_types.h"
+      5          #include  "hal_car.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      6          #include  "hal_mcu.h"
+      7          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      8          void hal_car_configure ( void )
+   \                     hal_car_configure:
+      9          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     10            P0SEL &= ~0xF0;               //P0.6,P0.7,P0.4,P0.5
+   \   000000   53F30F       ANL     0xf3,#0xf
+     11            P0DIR |= 0xF0;                //P0.6,P0.7,P0.4,P0.5
+   \   000003   43FDF0       ORL     0xfd,#0xf0
+     12          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     13          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void hal_car_turnleft ( void )
+   \                     hal_car_turnleft:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16            Driver_1 = 0;
+   \   000000   C284         CLR     0x80.4
+     17            Driver_2 = 1;
+   \   000002   D285         SETB    0x80.5
+     18            Driver_3 = 1;
+   \   000004                REQUIRE ?Subroutine0
+   \   000004                REQUIRE _A_P0
+   \   000004                ; // Fall through to label ?Subroutine0
+     19            Driver_4 = 0;
+     20          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D286         SETB    0x80.6
+   \   000002                REQUIRE ??Subroutine1_0
+   \   000002                ; // Fall through to label ??Subroutine1_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine1_0:
+   \   000000   C287         CLR     0x80.7
+   \   000002   02....       LJMP    ?BRET
+     21          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     22          void hal_car_turnright( void )
+   \                     hal_car_turnright:
+     23          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     24            Driver_1 = 1;
+   \   000000   D284         SETB    0x80.4
+     25            Driver_2 = 0;
+   \   000002   C285         CLR     0x80.5
+     26            Driver_3 = 0;
+   \   000004   C286         CLR     0x80.6
+     27            Driver_4 = 1;
+   \   000006   D287         SETB    0x80.7
+     28          }
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE _A_P0
+     29          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     30          void hal_car_go ( void )
+   \                     hal_car_go:
+     31          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     32            Driver_1 = 1;
+   \   000000   D284         SETB    0x80.4
+     33            Driver_2 = 0;
+   \   000002   C285         CLR     0x80.5
+     34            Driver_3 = 1;
+   \   000004   80..         SJMP    ?Subroutine0
+   \   000006                REQUIRE _A_P0
+     35            Driver_4 = 0;
+     36          }
+     37          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     38          void hal_car_stop ( void )
+   \                     hal_car_stop:
+     39          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     40            Driver_1 = 0;
+   \   000000   C284         CLR     0x80.4
+     41            Driver_2 = 0;
+   \   000002   C285         CLR     0x80.5
+     42            Driver_3 = 0;
+   \   000004   C286         CLR     0x80.6
+     43            Driver_4 = 0;
+   \   000006   80..         SJMP    ??Subroutine1_0
+   \   000008                REQUIRE _A_P0
+     44          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_car_configure?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_car_configure
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_car_turnleft?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_car_turnleft
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_car_turnright?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_car_turnright
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_car_go?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_car_go
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hal_car_stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hal_car_stop
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     hal_car_configure     0      0      0
+     hal_car_go            0      0      0
+     hal_car_stop          0      0      0
+     hal_car_turnleft      0      0      0
+     hal_car_turnright     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     _A_P0                        1
+     P0SEL                        1
+     P0DIR                        1
+     hal_car_configure            9
+     hal_car_turnleft             4
+     ?Subroutine0                 2
+     ??Subroutine1_0              5
+     hal_car_turnright           11
+     hal_car_go                   6
+     hal_car_stop                 8
+     ??hal_car_configure?relay    6
+     ??hal_car_turnleft?relay     6
+     ??hal_car_turnright?relay    6
+     ??hal_car_go?relay           6
+     ??hal_car_stop?relay         6
+
+ 
+ 45 bytes in segment BANKED_CODE
+ 30 bytes in segment BANK_RELAYS
+  3 bytes in segment SFR_AN
+ 
+ 75 bytes of CODE memory
+  0 bytes of DATA memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none

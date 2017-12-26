@@ -1,0 +1,495 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         29/Nov/2017  11:27:44 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\Source\ #
+#                          CoordinatorSampleApp.c                             #
+#    Command line       =  -f C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg          #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\Tools\CC2530DB\f8wConfig.cfg            #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\Source\ #
+#                          CoordinatorSampleApp.c -D ZIGBEEPRO -D             #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK -D           #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -lC C:\Users\John\Desktop\Try_ #
+#                          zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\EndDeviceEB-Pro\List\    #
+#                          -lA C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\EndDeviceEB-Pro\List\ --diag_suppress        #
+#                          Pe001,Pa010 -o C:\Users\John\Desktop\Try_zigbee\ZS #
+#                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\Sa #
+#                          mpleApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\John\Desktop\Try_ #
+#                          zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\ -I                      #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\SOURCE\ -I C:\Users\John\Desktop\Try_zigbee\Z #
+#                          Stack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I      #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MT\ -I                 #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I        #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\   #
+#                          -I C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I  #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I       #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\AF\ -I           #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I         #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I          #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I           #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\ZMAC\ -I               #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I        #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I     #
+#                          C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\   #
+#                          -I C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \SINGLE_CHIP\ -Ohz --require_prototypes            #
+#    List file          =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\EndDeviceEB-Pro\List\CoordinatorSampleApp.lst    #
+#    Object file        =  C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530D #
+#                          B\EndDeviceEB-Pro\Obj\CoordinatorSampleApp.r51     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\John\Desktop\Try_zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source\CoordinatorSampleApp.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "ZGlobals.h"
+      6          #include "AF.h"
+      7          #include "aps_groups.h"
+      8          #include "ZDApp.h"
+      9          
+     10          #include "SampleApp.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   uint8 SampleApp_TaskID
+   \                     SampleApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   uint8 SampleApp_TransID
+   \                     SampleApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   uint8 SampleAppDirection
+   \                     SampleAppDirection:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   uint8 SampleAppState
+   \                     SampleAppState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     11          #include "SampleAppHw.h"
+     12          
+     13          #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+     14          
+     15          /* HAL */
+     16          #include "hal_car.h"
+     17          #include "hal_track.h"
+     18          
+     19          /*********************************************************************
+     20           * MACROS
+     21           */
+     22          
+     23          /*********************************************************************
+     24           * CONSTANTS
+     25           */
+     26          
+     27          /*********************************************************************
+     28           * TYPEDEFS
+     29           */
+     30          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     31          void SampleApp_Init( uint8 task_id )
+   \                     SampleApp_Init:
+     32          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     33            SampleApp_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#SampleApp_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+     34            SampleApp_TransID = 0;
+   \   00000A   90....       MOV     DPTR,#SampleApp_TransID
+   \   00000D   E4           CLR     A
+   \   00000E   F0           MOVX    @DPTR,A
+     35            
+     36            hal_car_configure();
+   \   00000F                ; Setup parameters for call to function hal_car_configure
+   \   00000F   12....       LCALL   ??hal_car_configure?relay
+     37            hal_track_configure();
+   \   000012                ; Setup parameters for call to function hal_track_configure
+   \   000012   12....       LCALL   ??hal_track_configure?relay
+     38            
+     39            osal_set_event( SampleApp_TaskID, SAMPLEAPP_CAR_EVT );
+   \   000015                ; Setup parameters for call to function osal_set_event
+   \   000015   7A00         MOV     R2,#0x0
+   \   000017   7B30         MOV     R3,#0x30
+   \   000019   90....       MOV     DPTR,#SampleApp_TaskID
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??osal_set_event?relay
+     40            osal_set_event( SampleApp_TaskID, SAMPLEAPP_COLOR_EVT );
+   \   000021                ; Setup parameters for call to function osal_set_event
+   \   000021   7A10         MOV     R2,#0x10
+   \   000023   7B30         MOV     R3,#0x30
+   \   000025   90....       MOV     DPTR,#SampleApp_TaskID
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   F9           MOV     R1,A
+   \   00002A   12....       LCALL   ??osal_set_event?relay
+     41            
+     42          }
+   \   00002D                REQUIRE ?Subroutine0
+   \   00002D                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     43          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          uint16 SampleApp_ProcessEvent( uint8 task_id, uint16 events )
+   \                     SampleApp_ProcessEvent:
+     45          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     46            (void)task_id;  // Intentionally unreferenced parameter
+     47            
+     48          //自行定义的事件处理函数
+     49            if ( events & SAMPLEAPP_CAR_EVT )
+   \   000009   5430         ANL     A,#0x30
+   \   00000B   F9           MOV     R1,A
+   \   00000C   6050         JZ      ??SampleApp_ProcessEvent_0
+     50            {
+     51                if( SampleAppState == 0  )
+   \   00000E   90....       MOV     DPTR,#SampleAppState
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   702D         JNZ     ??SampleApp_ProcessEvent_1
+     52                {
+     53                  if( SampleAppDirection == 1 )
+   \   000014   90....       MOV     DPTR,#SampleAppDirection
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   6401         XRL     A,#0x1
+   \   00001A   7003         JNZ     ??SampleApp_ProcessEvent_2
+     54                  {
+     55                    hal_car_turnleft();
+   \   00001C                ; Setup parameters for call to function hal_car_turnleft
+   \   00001C   12....       LCALL   ??hal_car_turnleft?relay
+     56                  }
+     57                  if( SampleAppDirection == 2 )
+   \                     ??SampleApp_ProcessEvent_2:
+   \   00001F   90....       MOV     DPTR,#SampleAppDirection
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   6402         XRL     A,#0x2
+   \   000025   7003         JNZ     ??SampleApp_ProcessEvent_3
+     58                  {
+     59                    hal_car_turnright();
+   \   000027                ; Setup parameters for call to function hal_car_turnright
+   \   000027   12....       LCALL   ??hal_car_turnright?relay
+     60                  }
+     61                  if( SampleAppDirection == 0 )
+   \                     ??SampleApp_ProcessEvent_3:
+   \   00002A   90....       MOV     DPTR,#SampleAppDirection
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   7003         JNZ     ??SampleApp_ProcessEvent_4
+     62                  {
+     63                    hal_car_go();
+   \   000030                ; Setup parameters for call to function hal_car_go
+   \   000030   12....       LCALL   ??hal_car_go?relay
+     64                  }
+     65                  SampleAppState = 1;
+   \                     ??SampleApp_ProcessEvent_4:
+   \   000033   90....       MOV     DPTR,#SampleAppState
+   \   000036   7401         MOV     A,#0x1
+   \   000038   F0           MOVX    @DPTR,A
+     66                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_CAR_EVT, 5 );
+   \   000039                ; Setup parameters for call to function osal_start_timerEx
+   \   000039   7C05         MOV     R4,#0x5
+   \   00003B   7D00         MOV     R5,#0x0
+   \   00003D   7A00         MOV     R2,#0x0
+   \   00003F   8010         SJMP    ??SampleApp_ProcessEvent_5
+     67                }
+     68                else if( SampleAppState == 1 )
+   \                     ??SampleApp_ProcessEvent_1:
+   \   000041   6401         XRL     A,#0x1
+   \   000043   7016         JNZ     ??SampleApp_ProcessEvent_6
+     69                {
+     70                  hal_car_stop();
+   \   000045                ; Setup parameters for call to function hal_car_stop
+   \   000045   12....       LCALL   ??hal_car_stop?relay
+     71                  SampleAppState = 0;
+   \   000048   90....       MOV     DPTR,#SampleAppState
+   \   00004B   E4           CLR     A
+   \   00004C   F0           MOVX    @DPTR,A
+     72                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_CAR_EVT, 15 );
+   \   00004D                ; Setup parameters for call to function osal_start_timerEx
+   \   00004D   7C0F         MOV     R4,#0xf
+   \   00004F   FD           MOV     R5,A
+   \   000050   FA           MOV     R2,A
+   \                     ??SampleApp_ProcessEvent_5:
+   \   000051   7B30         MOV     R3,#0x30
+   \   000053   90....       MOV     DPTR,#SampleApp_TaskID
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   F9           MOV     R1,A
+   \   000058   12....       LCALL   ??osal_start_timerEx?relay
+     73                }
+     74              return( events ^ SAMPLEAPP_CAR_EVT );
+   \                     ??SampleApp_ProcessEvent_6:
+   \   00005B   EE           MOV     A,R6
+   \   00005C   8054         SJMP    ??SampleApp_ProcessEvent_7
+     75            }
+     76            
+     77          //自行定义的事件处理函数
+     78            if( events & SAMPLEAPP_COLOR_EVT ) //此时检测到黑带
+   \                     ??SampleApp_ProcessEvent_0:
+   \   00005E   EE           MOV     A,R6
+   \   00005F   5410         ANL     A,#0x10
+   \   000061   49           ORL     A,R1
+   \   000062   6053         JZ      ??SampleApp_ProcessEvent_8
+     79             {
+     80                if( Color_1 == 1 && Color_2 == 0 )
+   \   000064   A280         MOV     C,0x80.0
+   \   000066   500E         JNC     ??SampleApp_ProcessEvent_9
+   \   000068   A281         MOV     C,0x80.1
+   \   00006A   400A         JC      ??SampleApp_ProcessEvent_9
+     81                {
+     82                  SampleAppDirection = 1;
+   \   00006C   90....       MOV     DPTR,#SampleAppDirection
+   \   00006F   7401         MOV     A,#0x1
+   \                     ??SampleApp_ProcessEvent_10:
+   \   000071   F0           MOVX    @DPTR,A
+     83                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_COLOR_EVT, 100 );
+   \   000072                ; Setup parameters for call to function osal_start_timerEx
+   \   000072   7C64         MOV     R4,#0x64
+   \   000074   802B         SJMP    ??SampleApp_ProcessEvent_11
+     84                }
+     85                else if( Color_1 == 0 && Color_2 == 1 )   
+   \                     ??SampleApp_ProcessEvent_9:
+   \   000076   A280         MOV     C,0x80.0
+   \   000078   400B         JC      ??SampleApp_ProcessEvent_12
+   \   00007A   A281         MOV     C,0x80.1
+   \   00007C   5007         JNC     ??SampleApp_ProcessEvent_12
+     86                {
+     87                  SampleAppDirection = 2;
+   \   00007E   90....       MOV     DPTR,#SampleAppDirection
+   \   000081   7402         MOV     A,#0x2
+   \   000083   80EC         SJMP    ??SampleApp_ProcessEvent_10
+     88                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_COLOR_EVT, 100 );
+     89                }
+     90                else if( Color_1 == 0 && Color_2 == 0 )
+   \                     ??SampleApp_ProcessEvent_12:
+   \   000085   A280         MOV     C,0x80.0
+   \   000087   400E         JC      ??SampleApp_ProcessEvent_13
+   \   000089   A281         MOV     C,0x80.1
+   \   00008B   400A         JC      ??SampleApp_ProcessEvent_13
+     91                {
+     92                  SampleAppDirection = 0;
+   \   00008D   90....       MOV     DPTR,#SampleAppDirection
+   \   000090   E4           CLR     A
+   \   000091   F0           MOVX    @DPTR,A
+     93                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_COLOR_EVT, 50 );
+   \   000092                ; Setup parameters for call to function osal_start_timerEx
+   \   000092   7C32         MOV     R4,#0x32
+   \   000094   FD           MOV     R5,A
+   \   000095   800C         SJMP    ??SampleApp_ProcessEvent_14
+     94                }    
+     95                else if( Color_1 == 1 && Color_2 == 1 )
+   \                     ??SampleApp_ProcessEvent_13:
+   \   000097   A280         MOV     C,0x80.0
+   \   000099   5014         JNC     ??SampleApp_ProcessEvent_15
+   \   00009B   A281         MOV     C,0x80.1
+   \   00009D   5010         JNC     ??SampleApp_ProcessEvent_15
+     96                {
+     97                  osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_COLOR_EVT, 50 );
+   \   00009F                ; Setup parameters for call to function osal_start_timerEx
+   \   00009F   7C32         MOV     R4,#0x32
+   \                     ??SampleApp_ProcessEvent_11:
+   \   0000A1   7D00         MOV     R5,#0x0
+   \                     ??SampleApp_ProcessEvent_14:
+   \   0000A3   7A10         MOV     R2,#0x10
+   \   0000A5   7B30         MOV     R3,#0x30
+   \   0000A7   90....       MOV     DPTR,#SampleApp_TaskID
+   \   0000AA   E0           MOVX    A,@DPTR
+   \   0000AB   F9           MOV     R1,A
+   \   0000AC   12....       LCALL   ??osal_start_timerEx?relay
+     98                }
+     99              return( events ^ SAMPLEAPP_COLOR_EVT );
+   \                     ??SampleApp_ProcessEvent_15:
+   \   0000AF   EE           MOV     A,R6
+   \   0000B0   6410         XRL     A,#0x10
+   \                     ??SampleApp_ProcessEvent_7:
+   \   0000B2   FA           MOV     R2,A
+   \   0000B3   EF           MOV     A,R7
+   \   0000B4   6430         XRL     A,#0x30
+   \   0000B6   FB           MOV     R3,A
+    100            }
+   \                     ??SampleApp_ProcessEvent_8:
+   \   0000B7   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   0000BA                REQUIRE _A_P0
+    101          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function
+          "SampleApp_ProcessEvent"
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleApp_ProcessEvent
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     SampleApp_Init               0      0      9
+       -> hal_car_configure       0      0     18
+       -> hal_track_configure     0      0     18
+       -> osal_set_event          0      0     18
+       -> osal_set_event          0      0     18
+     SampleApp_ProcessEvent       0      0      9
+       -> hal_car_turnleft        0      0     18
+       -> hal_car_turnright       0      0     18
+       -> hal_car_go              0      0     18
+       -> osal_start_timerEx      0      0     18
+       -> hal_car_stop            0      0     18
+       -> osal_start_timerEx      0      0     18
+       -> osal_start_timerEx      0      0     18
+       -> osal_start_timerEx      0      0     18
+       -> osal_start_timerEx      0      0     18
+       -> osal_start_timerEx      0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     SampleApp_TaskID                  1
+     SampleApp_TransID                 1
+     SampleAppDirection                1
+     SampleAppState                    1
+     _A_P0                             1
+     SampleApp_Init                   45
+     ?Subroutine0                      5
+     SampleApp_ProcessEvent          186
+     ??SampleApp_Init?relay            6
+     ??SampleApp_ProcessEvent?relay    6
+
+ 
+ 236 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+   4 bytes in segment XDATA_Z
+ 
+ 248 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 1 byte shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: 1
